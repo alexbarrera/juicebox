@@ -56,9 +56,9 @@ public class HiCGlobals {
     //public static final int bufferSize = 4194304;
     public static final int bufferSize = 2097152;
     // Base-pair resolutions
-    public static final int[] bpBinSizes = {2500000, 1000000, 500000, 250000, 100000, 50000, 25000, 10000, 5000};
+    public static final int[] bpBinSizes = {2500000, 1000000, 500000, 250000, 100000, 50000, 25000, 10000, 5000, 4000, 3000, 2000, 1000};
     public static final String[] bpBinSizeNames = {"2.5 MB", "1 MB", "500 KB", "250 KB", "100 KB", "50 KB", "25 KB",
-            "10 KB", "5 KB"};
+            "10 KB", "5 KB", "4 KB", "3 KB", "2 KB", "1 KB"};
     // Fragment resolutions
     public static final int[] fragBinSizes = {500, 200, 100, 50, 20, 5, 2, 1};
     // Juicebox version (for display purposes only)

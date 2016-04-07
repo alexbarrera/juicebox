@@ -822,9 +822,14 @@ public class Dataset {
 
         String key = NormalizationVector.getKey(type, chrIdx, zoom.getUnit().toString(), zoom.getBinSize());
         if (type == NormalizationType.NONE) {
+            System.out.println("ERROR: type == NormalizationType.NONE");
             return null;
         } else if (type == NormalizationType.LOADED) {
-            return loadedNormalizationVectors == null ? null : loadedNormalizationVectors.get(key);
+            if (loadedNormalizationVectors == null) {
+                System.out.println("ERROR: loadedNormalizationVectors == null");
+                return null;
+            }
+            return loadedNormalizationVectors.get(key);
 
         } else if (!normalizationVectorCache.containsKey(key)) {
 
@@ -832,6 +837,7 @@ public class Dataset {
                 NormalizationVector nv = reader.readNormalizationVector(type, chrIdx, zoom.getUnit(), zoom.getBinSize());
                 normalizationVectorCache.put(key, nv);
             } catch (IOException e) {
+                System.out.println("IOExeception exception: " + e.getMessage());
                 normalizationVectorCache.put(key, null);
             }
         }
